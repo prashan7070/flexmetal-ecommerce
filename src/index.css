@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #080B10;
+    --bg-secondary: #11161D;
+    --surface-dark: #171E27;
+    --accent-primary: #00A8F0;
+    --accent-hover: #008FCF;
+    --text-primary: #F5F7FA;
+    --text-secondary: #9099A6;
+    --bg-light: #F5F7F9;
+    --surface-white: #FFFFFF;
+    --text-dark: #151B23;
+    --border-dark: #29323D;
+    --border-light: #E3E7EC;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom utility styles matching industrial brand identity */
+.bg-primary-dark {
+  background-color: #080B10;
+}
+.bg-secondary-dark {
+  background-color: #11161D;
+}
+.bg-surface-dark {
+  background-color: #171E27;
+}
+.border-dark {
+  border-color: #29323D;
+}
+.border-light {
+  border-color: #E3E7EC;
+}
+.text-accent-cyan {
+  color: #00A8F0;
+}
+.bg-accent-cyan {
+  background-color: #00A8F0;
+}
+.bg-accent-cyan-hover:hover {
+  background-color: #008FCF;
+}
+.text-muted-custom {
+  color: #9099A6;
+}
+
+/* Micro-perforated metal pattern */
+.bg-perforated-metal {
+  background-color: #0c1017;
+  background-image: radial-gradient(rgba(0, 168, 240, 0.15) 1px, transparent 0);
+  background-size: 8px 8px;
+}
