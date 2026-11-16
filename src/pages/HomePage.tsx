@@ -1,5 +1,7 @@
 import React from 'react';
 import { HeroSection } from '../components/hero/HeroSection';
+import { ClientMarquee } from '../components/home/ClientMarquee';
+import { EngineeringTruth } from '../components/home/EngineeringTruth';
 import { TrustStrip } from '../components/home/TrustStrip';
 import { AboutPreview } from '../components/home/AboutPreview';
 import { FeaturedProducts } from '../components/home/FeaturedProducts';
@@ -18,11 +20,13 @@ export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#080B10]">
       <HeroSection />
+      <ClientMarquee />
+      <EngineeringTruth />
+      <FeaturedProducts products={products} />
       <TrustStrip />
       <AboutPreview />
-      <FeaturedProducts products={products} />
-      <CoreServices />
       <EngineeringSpotlight />
+      <CoreServices />
       <ProjectsPreview projects={projects} />
       <ProcessSection />
       <TestimonialsSection />

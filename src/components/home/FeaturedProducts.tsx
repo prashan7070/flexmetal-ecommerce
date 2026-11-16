@@ -23,20 +23,20 @@ export const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ products }) 
                 FEATURED SYSTEMS
               </span>
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#F5F7FA] tracking-tight uppercase">
-              ENGINEERED FOR EVERY ENVIRONMENT.
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F7FA] tracking-tight">
+              Engineered Access Systems for Extreme Industrial Duty
             </h2>
             <p className="text-sm text-[#9099A6] mt-2 max-w-xl">
-              Discover our range of security shutters, high-speed doors, and automated access solutions.
+              Precision rolling shutters, high-speed insulated dock barriers, and smart motorized gates fabricated to exact millimetric aperture specs.
             </p>
           </div>
 
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#00A8F0] hover:text-white uppercase transition-colors whitespace-nowrap self-start md:self-auto"
+            className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wider text-[#00A8F0] hover:text-white uppercase transition-colors whitespace-nowrap self-start md:self-auto group"
           >
             <span>VIEW ALL PRODUCTS</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 

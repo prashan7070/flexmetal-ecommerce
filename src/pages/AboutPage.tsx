@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Factory, Award, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
+import { assetUrl } from '../utils/assetUrl';
 
 export const AboutPage: React.FC = () => {
   const { settings } = useSettings();
@@ -60,7 +61,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="h-[400px] sm:h-[480px] rounded-sm overflow-hidden border border-[#29323D] bg-[#11161D]">
             <img
-              src="/src/assets/images/industrial_logistics_doors_1794361324062.jpg"
+              src={assetUrl('/src/assets/images/industrial_logistics_doors_1794361324062.jpg')}
               alt="FLEXMETAL automated logistics bay installation"
               className="w-full h-full object-cover"
             />

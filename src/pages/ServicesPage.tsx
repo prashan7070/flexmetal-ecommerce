@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Factory, Wrench, Cpu, RefreshCw, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 export const ServicesPage: React.FC = () => {
   return (
@@ -68,7 +69,7 @@ export const ServicesPage: React.FC = () => {
           </div>
           <div className="h-[340px] sm:h-[400px] rounded-sm overflow-hidden border border-[#29323D] bg-[#11161D]">
             <img
-              src="/src/assets/images/shutter_perforated_detail_1794361322601.jpg"
+              src={assetUrl('/src/assets/images/shutter_perforated_detail_1794361322601.jpg')}
               alt="Custom manufacturing perforated shutter slats"
               className="w-full h-full object-cover"
             />
@@ -79,7 +80,7 @@ export const ServicesPage: React.FC = () => {
         <div id="installation" className="py-16 border-t border-[#29323D] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 h-[340px] sm:h-[400px] rounded-sm overflow-hidden border border-[#29323D] bg-[#11161D]">
             <img
-              src="/assets/aistudio/project-modern-commercial-warehouse_aa05adc9.webp"
+              src={assetUrl('/assets/aistudio/project-modern-commercial-warehouse_aa05adc9.webp')}
               alt="Installation on modern commercial warehouse"
               className="w-full h-full object-cover"
             />
@@ -158,7 +159,7 @@ export const ServicesPage: React.FC = () => {
           </div>
           <div className="h-[340px] sm:h-[400px] rounded-sm overflow-hidden border border-[#29323D] bg-[#11161D]">
             <img
-              src="/src/assets/images/storefront_security_shutter_1794361323169.jpg"
+              src={assetUrl('/src/assets/images/storefront_security_shutter_1794361323169.jpg')}
               alt="Automated storefront roller shutter motorization"
               className="w-full h-full object-cover"
             />
@@ -169,7 +170,7 @@ export const ServicesPage: React.FC = () => {
         <div id="repair" className="py-16 border-t border-[#29323D] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 h-[340px] sm:h-[400px] rounded-sm overflow-hidden border border-[#29323D] bg-[#11161D]">
             <img
-              src="/src/assets/images/industrial_logistics_doors_1794361324062.jpg"
+              src={assetUrl('/src/assets/images/industrial_logistics_doors_1794361324062.jpg')}
               alt="Industrial maintenance and repair services"
               className="w-full h-full object-cover"
             />

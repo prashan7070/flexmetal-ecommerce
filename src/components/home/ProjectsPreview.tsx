@@ -29,11 +29,11 @@ export const ProjectsPreview: React.FC<ProjectsPreviewProps> = ({ projects }) =>
                 PORTFOLIO SHOWCASE
               </span>
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#F5F7FA] tracking-tight uppercase">
-              PRECISION IN EVERY INSTALLATION.
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F7FA] tracking-tight">
+              Architectural &amp; Industrial Case Studies
             </h2>
             <p className="text-sm text-[#9099A6] mt-2 max-w-xl">
-              Engineered rolling systems executed across logistics centers, commercial retail flagships, and architectural estates.
+              Engineered rolling access systems executed across national landmarks, cold-chain distribution terminals, and commercial flagships in Sri Lanka.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export const ProjectsPreview: React.FC<ProjectsPreviewProps> = ({ projects }) =>
                     </div>
 
                     <h3
-                      className={`font-display font-bold text-[#F5F7FA] group-hover:text-[#00A8F0] transition-colors leading-snug uppercase ${
+                      className={`font-bold text-[#F5F7FA] group-hover:text-[#00A8F0] transition-colors leading-snug tracking-tight ${
                         isMarquee ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg'
                       }`}
                     >

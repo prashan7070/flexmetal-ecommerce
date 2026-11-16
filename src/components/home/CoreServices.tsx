@@ -45,11 +45,11 @@ export const CoreServices: React.FC = () => {
               CAPABILITIES & SERVICES
             </span>
           </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#F5F7FA] tracking-tight uppercase">
-            COMPLETE SHUTTER SOLUTIONS.
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F7FA] tracking-tight">
+            Lifecycle Engineering &amp; Emergency Dispatch Services
           </h2>
           <p className="text-sm text-[#9099A6] mt-2">
-            From initial site consultation and precision engineering to turnkey commissioning and lifetime maintenance.
+            From initial aperture laser measurement and custom CNC roll-forming to certified structural anchoring and 24/7 on-site emergency repairs across Sri Lanka.
           </p>
         </div>
 

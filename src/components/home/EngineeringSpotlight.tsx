@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sliders, Shield, Zap, Sparkles } from 'lucide-react';
+import { assetUrl } from '../../utils/assetUrl';
 
 export const EngineeringSpotlight: React.FC = () => {
   const specs = [
@@ -52,8 +53,7 @@ export const EngineeringSpotlight: React.FC = () => {
                   key={item.title}
                   className="bg-[#11161D] border border-[#29323D] p-5 rounded-sm"
                 >
-                  <h3 className="font-display font-bold text-sm text-[#F5F7FA] mb-2 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[#00A8F0] rounded-full" />
+                  <h3 className="font-display font-bold text-sm text-[#F5F7FA] mb-2 tracking-tight">
                     {item.title}
                   </h3>
                   <p className="text-xs text-[#9099A6] leading-relaxed">
@@ -78,7 +78,7 @@ export const EngineeringSpotlight: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="relative rounded-sm overflow-hidden border border-[#29323D] bg-[#11161D] group">
               <img
-                src="/src/assets/images/shutter_perforated_detail_1794361322601.jpg"
+                src={assetUrl('/src/assets/images/shutter_perforated_detail_1794361322601.jpg')}
                 alt="Close-up perforated industrial roller shutter slat profile"
                 className="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"

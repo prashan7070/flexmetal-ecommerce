@@ -58,7 +58,7 @@ export function App() {
   return (
     <SettingsProvider>
       <CartProvider>
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
           <ScrollToTop />
           <div className="flex flex-col min-h-screen bg-[#080B10] selection:bg-[#00A8F0] selection:text-white">
             <Navbar />

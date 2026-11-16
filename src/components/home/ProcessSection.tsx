@@ -35,11 +35,11 @@ export const ProcessSection: React.FC = () => {
               METHODOLOGY
             </span>
           </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#F5F7FA] tracking-tight uppercase">
-            OUR ENGINEERING WORKFLOW.
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F7FA] tracking-tight">
+            Our Four-Phase Delivery Standard
           </h2>
           <p className="text-sm text-[#9099A6] mt-2">
-            A systematic four-phase delivery model ensuring structural accuracy, seamless motor integration, and zero site surprises.
+            A systematic turnkey delivery model ensuring structural accuracy, seamless motor integration, and zero site surprises.
           </p>
         </div>
 

@@ -27,6 +27,14 @@ export const TestimonialsSection: React.FC = () => {
       role: 'Property Owner & Client',
       organization: 'Cinnamon Gardens Residential Project',
     },
+    {
+      id: 4,
+      quote:
+        "Modernizing the delivery and back-of-house rolling access shutters at Queen's Hotel Kandy required strict archaeological sensitivity. FLEXMETAL custom-matched our colonial graphite finish while providing motorized planetary drives that don't disrupt guests.",
+      author: 'Niroshan Aluwihare',
+      role: 'Operations & Engineering Manager',
+      organization: "Queen's Hotel Kandy",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,8 +60,8 @@ export const TestimonialsSection: React.FC = () => {
             </span>
             <span className="w-5 h-[2px] bg-[#00A8F0]" />
           </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#F5F7FA] tracking-tight uppercase">
-            TRUSTED BY INDUSTRY LEADERS.
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F7FA] tracking-tight">
+            Verified Performance Across Real Operations
           </h2>
         </div>
 

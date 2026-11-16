@@ -1,5 +1,6 @@
 import { initialCategories, initialProducts, initialProjects } from '../data/seedData';
 import { defaultSiteSettings } from '../config/siteSettings';
+import { assetUrl } from '../utils/assetUrl';
 import {
   Product,
   Category,
@@ -14,7 +15,7 @@ import {
 const STORAGE_KEYS = {
   PRODUCTS: 'fxm_products_v1',
   CATEGORIES: 'fxm_categories_v1',
-  PROJECTS: 'fxm_projects_v1',
+  PROJECTS: 'fxm_projects_v2',
   QUOTES: 'fxm_quotes_v1',
   INQUIRIES: 'fxm_inquiries_v1',
   ORDERS: 'fxm_orders_v1',
@@ -121,7 +122,10 @@ function safeSet<T>(key: string, data: T): void {
 export const StorageService = {
   // Products
   getProducts(): Product[] {
-    return safeGet<Product[]>(STORAGE_KEYS.PRODUCTS, initialProducts);
+    return safeGet<Product[]>(STORAGE_KEYS.PRODUCTS, initialProducts).map((p) => ({
+      ...p,
+      images: p.images.map(assetUrl),
+    }));
   },
   getProductBySlug(slug: string): Product | undefined {
     return this.getProducts().find((p) => p.slug === slug);
@@ -143,12 +147,18 @@ export const StorageService = {
 
   // Categories
   getCategories(): Category[] {
-    return safeGet<Category[]>(STORAGE_KEYS.CATEGORIES, initialCategories);
+    return safeGet<Category[]>(STORAGE_KEYS.CATEGORIES, initialCategories).map((c) => ({
+      ...c,
+      image: c.image ? assetUrl(c.image) : undefined,
+    }));
   },
 
   // Projects
   getProjects(): Project[] {
-    return safeGet<Project[]>(STORAGE_KEYS.PROJECTS, initialProjects);
+    return safeGet<Project[]>(STORAGE_KEYS.PROJECTS, initialProjects).map((p) => ({
+      ...p,
+      images: p.images.map(assetUrl),
+    }));
   },
   getProjectBySlug(slug: string): Project | undefined {
     return this.getProjects().find((p) => p.slug === slug);

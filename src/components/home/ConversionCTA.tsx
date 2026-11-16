@@ -20,29 +20,29 @@ export const ConversionCTA: React.FC = () => {
           <span className="w-5 h-[2px] bg-[#00A8F0]" />
         </div>
 
-        <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#F5F7FA] tracking-tight uppercase max-w-3xl mx-auto leading-tight mb-6">
-          LET'S BUILD YOUR NEXT SECURITY SOLUTION.
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F5F7FA] tracking-tight max-w-3xl mx-auto leading-tight mb-6">
+          Ready to Engineer an Uncompromising Access Barrier?
         </h2>
 
         <p className="text-sm sm:text-base text-[#9099A6] max-w-xl mx-auto mb-10 leading-relaxed">
-          Tell us what you need. Our engineering team will calculate wind load specifications, aperture clearance, and provide an itemized quote tailored to your project.
+          Tell us your aperture dimensions and site realities. Our structural team will calculate wind deflection, specify direct-drive motor requirements, and generate an itemized technical proposal.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/quote"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#00A8F0] hover:bg-[#008FCF] text-white text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-sm transition-all duration-200 shadow-xl hover:shadow-[#00A8F0]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#00A8F0] hover:bg-[#0094d4] text-[#080B10] hover:text-black text-sm font-bold tracking-wider px-8 py-4 rounded-full transition-all duration-200 shadow-xl hover:shadow-[#00A8F0]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0] group"
           >
-            <span>REQUEST A QUOTE</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Let&apos;s Build Your Solution</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
           <Link
             to="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#171E27] hover:bg-[#202936] text-[#F5F7FA] hover:text-[#00A8F0] border border-[#29323D] hover:border-[#00A8F0]/50 text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#171E27] hover:bg-[#202936] text-[#F5F7FA] hover:text-[#00A8F0] border border-[#29323D] hover:border-[#00A8F0]/50 text-sm font-semibold px-8 py-4 rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0]"
           >
             <PhoneCall className="w-4 h-4" />
-            <span>CONTACT OUR TEAM</span>
+            <span>Speak with an Engineer</span>
           </Link>
         </div>
 

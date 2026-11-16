@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight, ShieldCheck, Cog, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowUpRight, ShieldCheck, Cog, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { assetUrl } from '../../utils/assetUrl';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const HeroSection: React.FC = () => {
       {/* Background Hero Shutter Image with Gradient Mask */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/assets/aistudio/hero-industrial-shutter_5c442b6f.webp"
+          src={assetUrl('/assets/aistudio/hero-industrial-shutter_5c442b6f.webp')}
           alt="Precision industrial metallic rolling shutter slats"
           className="w-full h-full object-cover object-right lg:object-[80%_center] opacity-80"
           loading="eager"
@@ -71,16 +72,16 @@ export const HeroSection: React.FC = () => {
             {/* Primary Button */}
             <Link
               to="/quote"
-              className="inline-flex items-center justify-center bg-[#00A8F0] hover:bg-[#008FCF] text-white text-[12px] font-bold tracking-widest uppercase px-7 py-3.5 rounded-sm transition-all duration-200 shadow-lg hover:shadow-[#00A8F0]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0] group"
+              className="inline-flex items-center justify-center bg-[#00A8F0] hover:bg-[#0094d4] text-[#080B10] hover:text-black text-[13px] font-bold tracking-wider uppercase px-7 py-3.5 rounded-sm transition-all duration-200 shadow-lg hover:shadow-[#00A8F0]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0] group"
             >
               <span>REQUEST A QUOTE</span>
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 stroke-[2.5]" />
             </Link>
 
             {/* Secondary Button */}
             <Link
               to="/products"
-              className="inline-flex items-center justify-center bg-[#171E27]/80 hover:bg-[#171E27] text-white hover:text-[#00A8F0] border border-[#29323D] hover:border-[#00A8F0]/50 text-[12px] font-bold tracking-widest uppercase px-7 py-3.5 rounded-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0]"
+              className="inline-flex items-center justify-center bg-[#171E27]/80 hover:bg-[#171E27] text-white hover:text-[#00A8F0] border border-[#29323D] hover:border-[#00A8F0]/50 text-[13px] font-semibold tracking-wider uppercase px-7 py-3.5 rounded-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A8F0]"
             >
               VIEW PRODUCTS
             </Link>
