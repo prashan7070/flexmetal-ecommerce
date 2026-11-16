@@ -1,0 +1,1662 @@
+# MASTER DEVELOPMENT PROMPT — FLEXMETAL
+
+## Role and objective
+
+Act as a senior UI/UX designer, creative director, frontend engineer, backend engineer, and software architect with extensive experience building premium industrial and architectural e-commerce websites.
+
+Build a complete, sophisticated, responsive, full-stack website for **FLEXMETAL**, a company specializing in roller shutters, roller gates, industrial doors, security shutters, automated gates, and related products.
+
+The application must combine:
+
+- A premium industrial corporate website
+- A modern e-commerce product catalog
+- A professional installation portfolio
+- A configurable shopping and quotation system
+- An administrative management dashboard
+- Customer inquiry and contact functionality
+
+**Critical requirement:** I have attached a screenshot of the visual design I want. Treat that screenshot as the PRIMARY VISUAL REFERENCE.
+
+Reproduce its aesthetic as closely as possible, especially the homepage navigation, typography, background treatment, visual hierarchy, spacing, colors, buttons, and hero composition.
+
+Do not interpret the screenshot as a generic inspiration. It is the visual foundation of this project.
+
+Extend its visual language consistently throughout the entire website.
+
+The finished result should look like a premium website created by a professional digital design agency for a high-end industrial engineering brand.
+
+Do not produce an ordinary template, dashboard-like marketing website, or a collection of unrelated components.
+
+Build a cohesive, realistic, polished application with functional navigation and interactive features.
+
+---
+
+# 1. Technology stack
+
+Use the following technologies.
+
+### Frontend
+- React with TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Motion for React (`motion/react`)
+- shadcn/ui components where appropriate
+- Radix UI primitives
+- Lucide React icons
+- React Hook Form
+- Zod form validation
+- TanStack Query for server-state management
+
+### Backend
+- Node.js
+- Express.js
+- TypeScript
+- REST API architecture
+- Zod request validation
+- Centralized error handling
+
+### Database and authentication
+- Firebase Firestore for persistent application data
+- Firebase Authentication for secure authentication
+- Firebase Cloud Storage for product and project images, when configured
+- Firebase security rules and role-based authorization
+
+### Deployment and tooling
+- Google AI Studio Build Mode
+- Google Cloud Run deployment compatibility
+- Environment-based configuration
+- GitHub version control
+- ESLint and Prettier
+- Vitest for important unit tests
+- React Testing Library for component tests
+
+Use stable, compatible library versions available in the environment.
+
+Do not add unnecessary dependencies.
+
+The application must run correctly inside Google AI Studio's preview environment.
+
+Use proper separation between frontend, backend, application configuration, reusable components, services, and data models.
+
+Do not expose any private API keys, service account credentials, or secrets in client-side code.
+
+---
+
+# 2. Brand identity
+
+Brand name: FLEXMETAL
+
+Business category: Rolling shutter manufacturing, industrial security solutions, motorized roller gates, architectural shutter systems, and installation services.
+
+Brand personality:
+- Premium
+- Industrial
+- Precise
+- Technologically advanced
+- Reliable
+- Strong
+- Architectural
+- Minimalistic
+- Professional
+
+Brand message:
+
+"INNOVATION THAT PROTECTS YOUR PROGRESS."
+
+Supporting copy:
+
+"High-performance rolling shutter solutions engineered for industrial, commercial, and residential spaces."
+
+The company name, contact information, logo, location, currency, and social media information must be editable through centralized configuration.
+
+Do not hardcode company details repeatedly across components.
+
+The supplied screenshot uses the FLEXMETAL identity. Retain it as the initial design identity, but make rebranding straightforward.
+
+---
+
+# 3. Design system
+
+## 3.1 Color palette
+
+Use the following consistent design tokens:
+
+| Design token | Hex color | Usage |
+|---|---|---|
+| Primary background | #080B10 | Hero, footer, dark sections |
+| Secondary background | #11161D | Cards and secondary dark surfaces |
+| Surface dark | #171E27 | Elevated dark components |
+| Primary accent | #00A8F0 | CTAs, highlights, active states |
+| Accent hover | #008FCF | Interactive states |
+| Primary text | #F5F7FA | Text on dark backgrounds |
+| Secondary text | #9099A6 | Descriptions and metadata |
+| Light background | #F5F7F9 | Product catalog and light sections |
+| White surface | #FFFFFF | E-commerce cards and forms |
+| Dark text | #151B23 | Text on light backgrounds |
+| Border dark | #29323D | Dark section dividers |
+| Border light | #E3E7EC | Light section dividers |
+
+Create CSS variables for all major colors.
+
+The primary visual contrast must be black/dark charcoal against bright industrial cyan-blue.
+
+Blue is an accent, not a background color for every component.
+
+Avoid excessive gradients, purple colors, multicolored effects, and unnecessary decorative elements.
+
+## 3.2 Typography
+
+Use Google Fonts.
+
+Preferred font combination:
+
+- **Space Grotesk:** Main display headings and large headlines
+- **Inter:** Body content, navigation, form labels, product information, and buttons
+
+Typography properties:
+
+- Hero headlines: 64–76px desktop, responsive
+- Section headings: 42–52px desktop
+- Card headings: 20–26px
+- Body text: 15–17px
+- Supporting text: 13–14px
+- Navigation: 11–12px uppercase
+- Button labels: 11–13px uppercase
+- Eyebrow labels: 11–12px uppercase, letter-spaced
+
+Hero headings must use heavy weights, tight line height, and strong letter spacing.
+
+Use a clear typography scale using CSS clamp().
+
+Do not use oversized body text.
+
+Avoid excessive typography variations.
+
+The visual hierarchy should feel like a premium automotive or architectural engineering website.
+
+## 3.3 Spacing and layout
+
+- Desktop content max-width: approximately 1200px
+- Hero content can use a narrower inner container to match the reference screenshot
+- Desktop horizontal padding: 48–72px within the main container
+- Tablet padding: 32px
+- Mobile padding: 20–24px
+- Major section vertical spacing: 100–140px desktop
+- Mobile section spacing: 64–80px
+- Card padding: 24–32px
+- Buttons: minimum 44px accessible touch height
+
+Use a consistent 4px or 8px spacing system.
+
+The design must feel spacious but not empty.
+
+Avoid unnecessary rounded cards. Industrial components should primarily use squared or subtly rounded corners.
+
+Use 0–6px border radii for most surfaces, except intentionally rounded floating controls.
+
+---
+
+# 4. Homepage — exact screenshot-inspired design
+
+This is the most important page.
+
+## 4.1 Navigation bar
+
+Create a full-width navigation bar positioned over the homepage hero.
+
+The navigation should initially have a transparent or dark translucent background.
+
+Approximate desktop height: 64px.
+
+Use a subtle bottom border with low-opacity white.
+
+Navigation structure:
+
+LEFT:
+FLEXMETAL logo
+
+CENTER/RIGHT:
+HOME | ABOUT | SERVICES | PRODUCTS | PROJECTS | CONTACT | LANGUAGE
+
+FAR RIGHT:
+Bright blue QUOTE button
+
+Logo treatment:
+
+- FLEX in white
+- METAL in electric blue
+- Uppercase
+- Bold
+- Clean wordmark
+- No unnecessary complicated icon
+
+Navigation appearance:
+
+- Uppercase labels
+- Small letter-spaced text
+- Muted gray at rest
+- White on hover
+- Blue active indicator
+- Professional spacing
+- Clear focus states
+
+On scroll:
+- Become sticky
+- Transition to a slightly blurred, opaque dark background
+- Add a subtle bottom border
+- Keep logo and CTA visible
+
+Mobile:
+- Logo on left
+- Menu icon on right
+- Accessible full-screen or slide-out navigation panel
+- Smooth opening animation
+- All navigation links and CTA available
+- Close on route navigation
+
+## 4.2 Hero section
+
+The homepage hero must closely reproduce the screenshot.
+
+Layout:
+- Full browser width
+- Approximately 90–100svh height on desktop
+- Full-bleed background
+- Left-aligned content
+- Strong dark gradient for text readability
+- Large industrial shutter imagery on the right
+
+### Background image
+
+Use a cinematic, high-resolution photograph of a modern metallic roller shutter or perforated industrial rolling gate.
+
+The preferred image should feature:
+
+- Dark metallic finish
+- Close-up industrial surface
+- Horizontal shutter slats
+- Perforated metal texture
+- Strong perspective
+- Dramatic side lighting
+- Premium engineering photography
+- Deep shadows
+
+The shutter should occupy the right and middle portions of the hero.
+
+The left portion must remain dark enough for the heading.
+
+Use CSS background-position or an absolutely positioned image with object-fit: cover.
+
+Use a layered black-to-transparent gradient.
+
+Do not use the screenshot itself as the hero background because it contains existing typography and navigation.
+
+Instead, use the screenshot as a composition reference and use a clean, appropriately licensed roller shutter photograph.
+
+Ensure background photography looks believable. Avoid unrelated factory buildings or generic technology imagery.
+
+### Hero content
+
+Position the content approximately on the left third of the screen and vertically centered, slightly above the midpoint if necessary to match the screenshot.
+
+Eyebrow:
+
+"ENGINEERED ROLLING SHUTTER SOLUTIONS"
+
+Small, blue, uppercase, letter-spaced text with a subtle underline or short accent line.
+
+Main headline:
+
+INNOVATION
+
+THAT PROTECTS
+
+YOUR PROGRESS.
+
+Highlight "PROGRESS." with a subtle blue gradient or electric blue color treatment similar to the reference.
+
+Use bright white for the other lines.
+
+Make the headline bold, highly readable, tightly spaced, and visually powerful.
+
+Supporting paragraph:
+
+"High-performance rolling shutters engineered for industrial, commercial, and residential environments."
+
+Keep the paragraph relatively narrow: approximately 380–440px.
+
+Use muted gray text.
+
+Two CTA buttons aligned horizontally:
+
+PRIMARY:
+REQUEST A QUOTE
+
+SECONDARY:
+VIEW PRODUCTS
+
+Primary button:
+- Solid electric blue
+- White uppercase text
+- Squared edges
+- Small letter spacing
+- Horizontal padding approximately 26px
+- Height approximately 44–48px
+
+Secondary button:
+- Transparent charcoal background
+- Thin muted border
+- White text
+- Matching height
+- Professional hover effects
+
+Do not use excessively rounded buttons.
+
+### Hero details
+
+Add:
+- Subtle image darkening toward the bottom
+- Smooth background image loading
+- Optional restrained parallax on desktop
+- A small animated scroll indicator near the bottom
+- A floating WhatsApp contact button in the bottom-right corner
+
+The WhatsApp button must use the configured company number and should not point to an invented phone number.
+
+The overall hero should feel cinematic, powerful, and sophisticated.
+
+Avoid excessive particles, glowing effects, animated grids, or distracting overlays.
+
+---
+
+# 5. Homepage content sections
+
+Develop the complete homepage following this order.
+
+## Section A — Trust and capability strip
+
+Immediately after the hero, show a compact trust section.
+
+Example headings:
+- Engineered for Durability
+- Precision Installation
+- Custom Manufacturing
+- Reliable Support
+
+Use minimal line icons and short descriptions.
+
+Do not invent awards, certificates, years of business, or numerical statistics.
+
+If genuine statistics are not available, omit them.
+
+Design:
+- Dark background
+- Four-column layout desktop
+- Thin separators
+- White headings
+- Muted descriptions
+- Subtle blue details
+
+## Section B — About the company
+
+Create a premium split-layout section.
+
+LEFT:
+Large architectural image of an installed roller shutter.
+
+RIGHT:
+Small eyebrow: "ABOUT FLEXMETAL"
+
+Large heading:
+"PROTECTION BUILT WITH PRECISION."
+
+Two short paragraphs explaining manufacturing quality, reliability, engineered security, and customized shutter solutions.
+
+Include:
+- Explore Our Company button
+- Three concise feature points
+- Optional small overlapping detail photograph
+
+Use generous whitespace.
+
+Alternate from dark to a light background if it improves the overall visual rhythm.
+
+## Section C — Featured products
+
+Section heading:
+
+"ENGINEERED FOR EVERY ENVIRONMENT."
+
+Subtitle:
+"Discover our range of security shutters and automated access solutions."
+
+Use a three-column product grid on desktop.
+
+Initial sample categories:
+1. Industrial Roller Shutters
+2. Commercial Roller Shutters
+3. Perforated Roller Shutters
+4. Motorized Roller Gates
+5. Insulated Roller Shutters
+6. Security Grilles
+
+Each card should include:
+- High-quality product photo
+- Category label
+- Product name
+- Short specifications
+- Availability or customization indicator
+- View Details button
+- Request Quote shortcut
+
+If a product has a valid configured price, show it.
+
+If the product is custom-manufactured, show "Custom Quote" or "Price on Request" instead of an invented price.
+
+Product cards:
+- White or light-gray background
+- Large image area
+- Clean typography
+- Subtle borders
+- Minimal shadow
+- Hover image zoom
+- Smooth hover elevation
+- Blue interactive accents
+
+Include a View All Products button.
+
+## Section D — Core services
+
+Use a dark section with strong typography.
+
+Heading:
+"COMPLETE SHUTTER SOLUTIONS."
+
+Services:
+- Custom Manufacturing
+- Professional Installation
+- Automation and Motorization
+- Repair and Maintenance
+
+Use a responsive two-by-two or four-column grid.
+
+Each service card includes:
+- Number index, such as 01
+- Minimal Lucide icon
+- Service title
+- Short description
+- Explore Service link
+
+Implement a hover interaction that changes border color and reveals a small arrow.
+
+Do not overanimate.
+
+## Section E — Engineering spotlight
+
+Create an editorial-style full-width feature section.
+
+Use a large industrial product photograph alongside bold typography.
+
+Heading:
+"DESIGNED FOR STRENGTH. BUILT FOR PERFORMANCE."
+
+Include a small technical specifications presentation with details such as:
+
+- Available finishes
+- Manual or motorized operation
+- Material options
+- Custom dimensions
+- Security features
+
+These are configurable product attributes, not universal guarantees.
+
+Add an Explore Technology CTA.
+
+Use a charcoal background and restrained blue accents.
+
+## Section F — Completed projects portfolio
+
+Heading:
+"PRECISION IN EVERY INSTALLATION."
+
+Create a premium masonry-inspired or balanced grid of installation project photography.
+
+Desktop grid:
+- One large featured project
+- Two smaller project cards
+- Additional projects below if data exists
+
+Each project card:
+- Image
+- Project title
+- Category
+- Location if known
+- View Project link
+
+On hover:
+- Image scales slightly
+- Gradient overlay appears or intensifies
+- Project title transitions upward
+- Small arrow icon appears
+
+Filters:
+- All
+- Residential
+- Commercial
+- Industrial
+
+Project content should come from the data layer.
+
+Use clearly marked demo entries until real projects are provided.
+
+## Section G — Our process
+
+Show a premium four-step workflow:
+
+01 — Consultation
+
+02 — Design & Measurement
+
+03 — Manufacturing
+
+04 — Installation & Support
+
+Use connected step numbers, minimal lines, and subtle motion.
+
+Explain each step in one or two sentences.
+
+## Section H — Testimonials
+
+Create a visually simple testimonial section.
+
+Use real testimonials only when available.
+
+For the demo, either use clearly labeled sample testimonials or an attractive empty-state layout.
+
+Do not invent real customer identities, star ratings, or verification claims.
+
+Design:
+- Large quotation typography
+- White or light background
+- Minimal arrows
+- Accessible carousel controls if multiple testimonials exist
+
+## Section I — Final conversion section
+
+Create a strong dark call-to-action section.
+
+Heading:
+"LET'S BUILD YOUR NEXT SECURITY SOLUTION."
+
+Supporting copy:
+"Tell us what you need. Our team will help you find the right rolling shutter solution."
+
+Buttons:
+REQUEST A QUOTE
+CONTACT OUR TEAM
+
+Use a photographic or textured dark background with a restrained blue glow or gradient.
+
+## Section J — Footer
+
+Use a sophisticated charcoal-black footer.
+
+Columns:
+
+Company:
+- About Us
+- Our Projects
+- Our Services
+
+Products:
+- Roller Shutters
+- Automated Gates
+- Industrial Doors
+- Accessories
+
+Support:
+- Contact
+- Request Quote
+- FAQs
+- Warranty Information
+
+Contact:
+- Company address
+- Phone
+- Email
+- WhatsApp
+- Business hours
+
+Include:
+- FLEXMETAL wordmark
+- Short brand statement
+- Social media icons
+- Privacy Policy
+- Terms and Conditions
+- Copyright year generated dynamically
+
+Do not invent addresses or contact details. Use editable placeholders where necessary.
+
+---
+
+# 6. Required website pages
+
+Implement the following routes with complete layouts.
+
+## Home — /
+
+Premium homepage described above.
+
+## Product catalog — /products
+
+Build a real product browsing experience.
+
+Desktop layout:
+
+LEFT SIDEBAR:
+- Product category filters
+- Operation type
+- Material
+- Application
+- Price range, only for priced products
+- Availability
+- Clear filters
+
+MAIN CONTENT:
+- Breadcrumbs
+- Catalog heading
+- Product count
+- Sorting options
+- Grid/list toggle
+- Responsive product grid
+- Pagination or accessible load-more behavior
+
+Include a functional search box.
+
+Filters and sorting must work on the displayed product data, and URL query parameters should preserve the selected state.
+
+Mobile filters should open in a drawer.
+
+## Product detail — /products/:slug
+
+Use a professional product detail layout.
+
+Desktop:
+
+LEFT:
+- Large product image
+- Thumbnail gallery
+- Zoom/lightbox
+- Optional specification drawing
+
+RIGHT:
+- Product title
+- Category
+- Product description
+- Key features
+- Product specifications
+- Material options
+- Finish options
+- Operation type
+- Dimensions, if applicable
+- Quantity selector
+- Pricing or quote state
+- Request Quote button
+- Add to Cart button only where purchasing is enabled
+
+Below:
+- Overview
+- Technical Specifications
+- Available Options
+- Installation Information
+- FAQ
+- Related Products
+
+Support products that require custom manufacturing.
+
+For custom products, provide a size configurator and add-to-quote functionality.
+
+For fixed-price products, provide an actual working cart flow.
+
+## Services — /services
+
+Create a premium editorial-style services overview.
+
+Include large imagery, strong headings, and cards linking to detailed service sections.
+
+Each service should explain what is offered, typical applications, and the relevant next action.
+
+## Projects — /projects
+
+Build a filterable portfolio gallery.
+
+Features:
+- Category filter
+- Responsive masonry-inspired gallery
+- Search where useful
+- Project detail navigation
+- Image lightbox
+
+## Project details — /projects/:slug
+
+Each project page includes:
+- Full-width project hero
+- Project title
+- Location, when available
+- Category
+- Project overview
+- Gallery
+- Relevant materials
+- Challenges and solutions, when documented
+- Related projects
+- Request Similar Solution CTA
+
+## About — /about
+
+Include:
+- Company introduction
+- Mission and values
+- Manufacturing capabilities
+- Quality philosophy
+- Team section if real team data exists
+- Facility and installation imagery
+- Company contact CTA
+
+Use professional storytelling and strong photography.
+
+Avoid unsupported claims of national leadership, certifications, or achievements.
+
+## Contact — /contact
+
+Two-column layout.
+
+LEFT:
+- Contact introduction
+- Company contact details
+- WhatsApp link
+- Business hours
+- Google Maps embed only when a verified location is configured
+
+RIGHT:
+- Contact form
+
+Fields:
+- Name
+- Email
+- Phone
+- Subject
+- Message
+
+Implement validation and feedback.
+
+## Quote request — /quote
+
+Create a premium multi-step quotation interface.
+
+Step 1 — Select Product
+- Product type
+- Application type
+- Manual or motorized
+
+Step 2 — Specifications
+- Width in millimeters
+- Height in millimeters
+- Quantity
+- Material preference
+- Finish/color preference
+- Additional options
+
+Step 3 — Installation
+- Installation required: Yes/No
+- Site type
+- Location/district
+- Preferred installation date, optional
+
+Step 4 — Customer Details
+- Full name
+- Email
+- Phone
+- Company name, optional
+- Additional notes
+- Drawing or photo attachment, optional
+
+Step 5 — Review and Submit
+
+Provide a confirmation screen with a reference number.
+
+The quote should persist in the database when Firebase is configured.
+
+Implement server-side validation.
+
+Provide a useful preview mode when Firebase has not yet been enabled, but do not falsely imply that a demo submission has been saved or emailed.
+
+The admin must be able to review quote submissions.
+
+## Shopping cart — /cart
+
+Support fixed-price products and accessories.
+
+Features:
+- Product preview
+- Quantity updates
+- Remove item
+- Subtotal
+- Empty-cart state
+- Continue shopping
+- Checkout or order inquiry action
+
+Persist the guest cart in browser storage, but never treat client-side prices as authoritative for a real order.
+
+## Checkout — /checkout
+
+Build a clean customer information and order-review interface.
+
+Include:
+- Contact details
+- Billing/delivery details
+- Delivery/installation option
+- Order summary
+- Shipping or installation charges when configured
+- Terms acceptance
+- Order submission
+
+Do not create a fake live payment gateway.
+
+If online payments are not configured, clearly present an order-request or manual-payment workflow.
+
+Actual card payment must remain unavailable until a legitimate payment provider and secure backend integration have been configured.
+
+## Customer account — /account
+
+Allow authenticated customers to:
+- View their profile
+- See previous quote requests
+- View submitted orders
+- Review request statuses
+
+Do not require customer login to browse products or submit an inquiry.
+
+## FAQs, Privacy Policy, Terms, and 404 pages
+
+Create polished, accessible layouts consistent with the design system.
+
+Use editable legal-content placeholders requiring business review.
+
+---
+
+# 7. Admin dashboard
+
+Create a protected administration area.
+
+Route: /admin
+
+Use a separate clean administrative UI while retaining the brand colors and typography.
+
+Do not use the dramatic marketing hero inside the admin interface.
+
+### Dashboard
+Display:
+- Total products
+- New quote requests
+- Pending inquiries
+- Orders
+- Projects
+
+Metrics must come from actual stored data, not hardcoded fake figures.
+
+### Product management
+Admin can:
+- Create products
+- Edit products
+- Delete or archive products
+- Upload product images
+- Set specifications
+- Add categories
+- Update pricing
+- Set quote-only or purchasable status
+- Manage stock for relevant items
+- Mark featured products
+
+### Project management
+Admin can:
+- Add portfolio projects
+- Upload multiple images
+- Edit descriptions
+- Categorize projects
+- Reorder featured projects
+- Publish/unpublish projects
+
+### Quote management
+Admin can:
+- View submitted quotes
+- Inspect specifications
+- View attachments
+- Change quote status
+- Add internal notes
+- Update estimated pricing where appropriate
+
+Quote statuses:
+New, Reviewing, Quoted, Approved, Rejected, Completed.
+
+### Orders
+Allow administrators to:
+- Review order requests
+- Update order status
+- View customer details
+- Track fulfillment progress
+
+### Other sections
+- Contact inquiries
+- Homepage content
+- Testimonials
+- Company information
+- Settings
+
+Use reusable forms and tables.
+
+Implement proper authentication and authorization.
+
+An authenticated customer must never be able to access admin functionality.
+
+Admin permissions must be enforced server-side and in database security rules, not only by hiding navigation links.
+
+Never allow public users to promote themselves to admin.
+
+---
+
+# 8. Application data architecture
+
+Create reusable TypeScript types and interfaces.
+
+Required entities:
+
+### Product
+Fields:
+id, slug, name, categoryId, description, shortDescription, images, specifications, material, finishOptions, operationType, applicationTypes, price, currency, priceOnRequest, purchasable, stockQuantity, featured, status, createdAt, updatedAt.
+
+### Category
+id, slug, name, description, image, displayOrder.
+
+### Project
+id, slug, title, category, description, images, location, completedDate, relatedProductIds, featured, published.
+
+### Quote
+id, referenceNumber, customerName, email, phone, company, productId, specifications, dimensions, quantity, installationRequired, location, attachmentUrls, notes, status, createdAt, updatedAt.
+
+### Order
+id, referenceNumber, customerId, items, subtotal, shippingFee, total, currency, customerDetails, fulfillmentStatus, paymentStatus, createdAt.
+
+### ContactInquiry
+id, name, email, phone, subject, message, status, createdAt.
+
+### UserProfile
+uid, name, email, phone, role, createdAt.
+
+### SiteSettings
+brandName, logo, tagline, phone, whatsappNumber, email, address, socialLinks, businessHours, currency, ecommerceEnabled, paymentEnabled.
+
+Use Firestore collections where appropriate.
+
+Provide repository/service abstractions to keep database operations separate from UI components.
+
+Include sample seed data.
+
+Seed data must be clearly identified as demonstration content.
+
+---
+
+# 9. API design
+
+Create a structured REST API under `/api`.
+
+Required operations include:
+
+Public:
+- GET /api/products
+- GET /api/products/:slug
+- GET /api/categories
+- GET /api/projects
+- GET /api/projects/:slug
+- POST /api/quotes
+- POST /api/contact
+- POST /api/orders
+- GET /api/site-settings/public
+
+Authenticated customers:
+- GET /api/account/quotes
+- GET /api/account/orders
+
+Admin:
+- Product CRUD
+- Project CRUD
+- Quote listing and status updates
+- Order management
+- Inquiry management
+- Editable site settings
+
+Implement:
+- Proper request validation
+- Consistent error responses
+- Authorization middleware
+- Input sanitization where appropriate
+- Rate limiting for public forms
+- Clear HTTP status codes
+- No sensitive error details exposed to customers
+
+Use pagination and filtering on list endpoints.
+
+All final order prices must be independently recalculated from trusted server data.
+
+---
+
+# 10. Motion and animation system
+
+Animation is important to this website but must remain elegant and purposeful.
+
+Use Motion for React and CSS transitions.
+
+## Hero entrance sequence
+
+On first load:
+
+1. Background image appears using a subtle opacity transition.
+2. Small eyebrow text fades in.
+3. Headline lines reveal upward with staggered timing.
+4. Supporting paragraph fades upward.
+5. CTA buttons enter together or in a short stagger.
+6. Scroll indicator becomes visible.
+
+Suggested parameters:
+- Headline translation: 24–32px
+- Headline animation: 650–850ms
+- Stagger delay: 100–140ms
+- Button animation: approximately 400ms
+- Easing: smooth ease-out
+
+Avoid overly long loading introductions.
+
+## Scroll animations
+
+Use Intersection Observer or viewport-triggered animation.
+
+For section reveals:
+- Initial opacity: 0
+- Initial translateY: 20–30px
+- Final opacity: 1
+- Final translateY: 0
+- Duration: 500–700ms
+
+Animate only the elements that benefit from it.
+
+Do not animate every paragraph separately.
+
+## Card hover interactions
+- Translate upward by 3–5px
+- Image scale 1.03–1.06
+- Border or accent color transition
+- Duration 200–300ms
+
+## Button interactions
+- Background color transition
+- Small arrow movement when relevant
+- Subtle brightness changes
+- Press feedback
+
+## Navigation
+- Background transition on scroll
+- Link color hover
+- Animated active indicator
+- Smooth mobile menu reveal
+
+## Portfolio imagery
+- Image zoom
+- Controlled overlay transitions
+- Title and arrow reveal
+
+## Page transitions
+Use subtle fade/translate transitions where appropriate without delaying navigation or causing layout instability.
+
+## Accessibility
+Respect `prefers-reduced-motion`.
+
+Disable parallax and complex movement for users requesting reduced motion.
+
+Animations must not interfere with keyboard interaction.
+
+Avoid continuous, expensive animations.
+
+Prioritize smooth 60fps performance where possible.
+
+---
+
+# 11. Responsive design
+
+Build mobile-first and optimize carefully for desktop.
+
+Target breakpoints:
+- Small mobile: 320–479px
+- Mobile: 480–767px
+- Tablet: 768–1023px
+- Laptop: 1024–1439px
+- Large desktop: 1440px and above
+
+### Desktop
+- Wide cinematic hero
+- Horizontal navigation
+- Multi-column product grid
+- Split image/text sections
+- Large architectural photography
+- Full interactive experience
+
+### Tablet
+- Reduced heading size
+- Two-column product grid
+- Collapsible navigation when required
+- Balanced spacing
+
+### Mobile
+- Hamburger navigation
+- Responsive hero headline around 36–44px
+- Background image repositioned so product imagery remains visible
+- Strong left-side contrast for text
+- Vertically stacked CTA buttons when necessary
+- Single-column product cards
+- Accessible filter drawer
+- Simplified project grid
+- Touch-friendly carousels and galleries
+- No horizontal overflow
+- Sticky controls only when beneficial
+
+Use modern viewport units and account for device safe areas.
+
+Do not simply shrink the desktop layout.
+
+Create an intentional mobile composition.
+
+---
+
+# 12. UI component architecture
+
+Organize the frontend into reusable components.
+
+Suggested folder structure:
+
+src/
+- components/
+  - layout/
+  - navigation/
+  - hero/
+  - ui/
+  - products/
+  - projects/
+  - forms/
+  - quotes/
+  - ecommerce/
+  - animations/
+- pages/
+- routes/
+- hooks/
+- context/
+- services/
+- lib/
+- types/
+- config/
+- data/
+- styles/
+
+server/
+- routes/
+- controllers/
+- services/
+- middleware/
+- validators/
+- repositories/
+- config/
+
+public/
+- images/
+- icons/
+- fonts/ (only if legitimately licensed and locally hosted)
+
+Use reusable components such as:
+- Navbar
+- MobileNavigation
+- Footer
+- HeroSection
+- SectionHeading
+- ProductCard
+- ProductGallery
+- FilterSidebar
+- ProjectCard
+- ServiceCard
+- QuoteForm
+- CartItem
+- Breadcrumbs
+- LoadingSkeleton
+- EmptyState
+- ErrorState
+- ContactForm
+- WhatsAppButton
+- ScrollReveal
+- AdminLayout
+
+Do not put the entire application inside one enormous component.
+
+Prefer small, maintainable files with clear responsibilities.
+
+---
+
+# 13. Image direction and asset quality
+
+Photography quality is essential.
+
+Use premium-looking images featuring:
+- Black metallic rolling shutters
+- Architectural security shutters
+- Industrial warehouse entrances
+- Commercial storefront shutters
+- Modern residential garage shutters
+- Perforated roller shutters
+- Motorized rolling systems
+- Close-up galvanized metal textures
+- Actual installation workmanship
+
+Images must look consistent in tone and quality.
+
+The hero should prioritize a dramatic close-up of a dark roller shutter, matching the uploaded reference.
+
+Other pages may use brighter, architectural installation photography.
+
+Prefer real photographs and legitimately licensed sources.
+
+If actual company images are provided, prioritize them.
+
+If no product images are available, use clearly identified demonstration assets and make replacement straightforward.
+
+Use responsive images, appropriate compression, aspect ratios, and lazy loading.
+
+Do not use the same image for every product.
+
+Do not rely on unrelated generic stock photography.
+
+Never use broken image URLs.
+
+---
+
+# 14. UX requirements
+
+Every interactive element must have a meaningful behavior.
+
+Required:
+- Functional navigation
+- Active page indication
+- Product search
+- Product filtering
+- Product sorting
+- Product details
+- Image galleries
+- Quote submission
+- Form validation
+- Cart interactions
+- Contact submission
+- Confirmation states
+- Admin login and protected functionality when configured
+- Loading states
+- Error states
+- Empty states
+- Responsive mobile navigation
+- Accessible modal/dialog behavior
+
+Use clear feedback for important actions.
+
+For example:
+- "Added to cart"
+- "Quote request submitted"
+- "Please enter a valid phone number"
+- "Unable to save. Please try again."
+
+Never show false success messages when a backend operation fails.
+
+For demo-only interactions, explicitly indicate demo status.
+
+Use progressive enhancement where practical.
+
+---
+
+# 15. Local business and commerce configuration
+
+The website should initially support a Sri Lankan business context without hardcoding assumptions about the final company location.
+
+Default currency:
+LKR
+
+Support:
+- Sri Lankan phone number formats
+- Configurable +94 WhatsApp number
+- District/location entry
+- Custom measurements in millimeters
+- Installation request functionality
+- Product quote requests
+- Manual order inquiry workflows
+
+Store prices as numeric values in a consistent currency model.
+
+Only display actual configured prices.
+
+Custom roller shutters must not receive automatically invented prices.
+
+Do not automatically integrate payment gateways or charge customers.
+
+Keep payment provider integration as an optional future extension.
+
+---
+
+# 16. Security requirements
+
+Apply appropriate security practices.
+
+- Validate requests on the server
+- Enforce authorization on the server
+- Configure Firestore security rules
+- Restrict administrative write operations
+- Verify Firebase identity tokens
+- Use trusted server-side authorization for admin roles
+- Validate attachment types and sizes
+- Sanitize unsafe user content
+- Protect contact and quote submission endpoints against spam
+- Use rate limiting
+- Protect secrets with environment configuration
+- Avoid sensitive customer information in logs
+- Do not trust client-provided order totals
+- Prevent unauthorized access to customer quotes and orders
+
+Include basic security-focused tests for authorization and validation behavior.
+
+---
+
+# 17. SEO and accessibility
+
+Implement good SEO foundations:
+- Semantic HTML
+- Descriptive page titles
+- Page-level metadata
+- Canonical URLs
+- Open Graph metadata
+- Descriptive image alt text
+- Sitemap
+- robots.txt
+- Structured data where genuinely applicable
+- Clean route names
+- Logical heading hierarchy
+
+Keep in mind that a purely client-rendered React application can have SEO limitations.
+
+Structure metadata and routes so the project can adopt prerendering or server rendering in a future production phase if necessary.
+
+Accessibility:
+- Proper labels
+- Visible keyboard focus
+- Keyboard-accessible navigation
+- Accessible dropdowns and dialogs
+- Sufficient color contrast
+- WCAG 2.2 AA as the target
+- Reduced-motion support
+- Meaningful form validation errors
+- Logical tab order
+- Screen-reader-friendly status messages
+
+---
+
+# 18. Performance
+
+Target a fast, responsive experience.
+
+Guidelines:
+- Avoid unnecessary JavaScript
+- Lazy-load route components
+- Optimize large images
+- Prioritize the hero image appropriately
+- Minimize layout shifts
+- Avoid excessive animation libraries
+- Debounce search interactions
+- Use proper skeleton loading states
+- Cache appropriate server requests
+- Avoid excessive database reads
+- Use efficient React component rendering
+
+Aim for strong Lighthouse results, especially on mobile, and test actual performance rather than claiming unmeasured scores.
+
+---
+
+# 19. Desktop and mobile wireframes
+
+Follow these structural layouts.
+
+## Desktop homepage
+
+[TRANSPARENT STICKY NAVIGATION]
+
+[                                        ]
+[  HERO TEXT           SHUTTER PHOTO    ]
+[  EYEBROW              BACKGROUND       ]
+[  LARGE HEADING                         ]
+[  DESCRIPTION                           ]
+[  BUTTON 1 | BUTTON 2                   ]
+[                                        ]
+
+[TRUST / CAPABILITY STRIP]
+
+[ABOUT IMAGE] [ABOUT TEXT + CTA]
+
+[FEATURED PRODUCTS — 3-COLUMN GRID]
+
+[DARK SERVICES SECTION — 4 CARDS]
+
+[ENGINEERING SPOTLIGHT — SPLIT LAYOUT]
+
+[PROJECTS — FEATURED ASYMMETRIC GRID]
+
+[OUR PROCESS — FOUR STEPS]
+
+[TESTIMONIALS]
+
+[FINAL QUOTE CTA]
+
+[FOOTER]
+
+## Product catalog desktop
+
+[NAVIGATION]
+
+[PAGE HEADING / BREADCRUMBS]
+
+[FILTER SIDEBAR] [SORTING + SEARCH]
+[FILTER SIDEBAR] [PRODUCT] [PRODUCT] [PRODUCT]
+[FILTER SIDEBAR] [PRODUCT] [PRODUCT] [PRODUCT]
+
+[PAGINATION]
+
+[FOOTER]
+
+## Product details desktop
+
+[NAVIGATION]
+
+[BREADCRUMBS]
+
+[IMAGE GALLERY] [PRODUCT INFORMATION]
+[THUMBNAILS   ] [OPTIONS]
+[             ] [PRICE / QUOTE]
+[             ] [PRIMARY ACTION]
+
+[TABS / TECHNICAL INFORMATION]
+
+[RELATED PRODUCTS]
+
+[FOOTER]
+
+## Mobile homepage
+
+[NAVIGATION: LOGO + MENU]
+
+[HERO PHOTO]
+[EYEBROW]
+[LARGE TITLE]
+[DESCRIPTION]
+[PRIMARY CTA]
+[SECONDARY CTA]
+
+[TRUST FEATURES]
+
+[ABOUT IMAGE]
+[ABOUT CONTENT]
+
+[FEATURED PRODUCTS]
+[VERTICAL CARDS]
+
+[SERVICES]
+
+[PROJECT GALLERY]
+
+[PROCESS]
+
+[CTA]
+
+[FOOTER]
+
+Ensure layouts remain balanced across all screen sizes.
+
+---
+
+# 20. Development workflow
+
+Implement this project in logical stages while maintaining a working preview.
+
+### Phase 1 — Design foundations
+- Create application structure
+- Configure Tailwind and typography
+- Set design tokens
+- Implement reusable buttons and layout utilities
+- Build navigation
+- Recreate the screenshot-inspired homepage hero
+- Verify desktop and mobile responsiveness
+
+### Phase 2 — Marketing website
+- About
+- Services
+- Featured products
+- Projects
+- Process
+- Contact
+- Footer
+
+### Phase 3 — Product and portfolio functionality
+- Catalog
+- Filters
+- Search
+- Product details
+- Project details
+- Image galleries
+
+### Phase 4 — Commerce and quotations
+- Quote builder
+- Cart
+- Order request
+- Contact forms
+- Validation
+- Confirmations
+
+### Phase 5 — Backend and persistence
+- Firebase configuration
+- Data models
+- Repository layer
+- REST APIs
+- Authentication
+- File uploads
+- Protected operations
+
+### Phase 6 — Administration
+- Admin dashboard
+- Product management
+- Project management
+- Quote management
+- Order management
+
+### Phase 7 — Quality assurance
+- Responsive testing
+- Animation polish
+- Accessibility
+- Security validation
+- SEO
+- Performance
+- Build verification
+
+Do not skip visual quality in pursuit of feature quantity.
+
+If functionality cannot be completed in one generation, preserve the existing working implementation and continue incrementally rather than replacing it with a simplified prototype.
+
+---
+
+# 21. Demonstration content
+
+Initially create enough coherent sample content to make the website visually complete.
+
+Suggested:
+- 6–8 product entries
+- 4–6 portfolio projects
+- 4 services
+- 5–8 FAQ entries
+- Sample technical specifications
+- Editable company profile data
+
+Clearly identify demonstration data internally.
+
+Do not present fictional testimonials, company statistics, certifications, customer logos, or project achievements as verified facts.
+
+The visual preview should be populated and attractive, but all real business information must remain easy to replace.
+
+---
+
+# 22. Final quality expectations
+
+The website must meet these standards:
+
+1. The homepage visually resembles the attached screenshot.
+2. The design has a strong, consistent industrial identity.
+3. Typography looks professionally art-directed.
+4. Colors are cohesive and restrained.
+5. Product photography is prominent.
+6. Navigation works on desktop and mobile.
+7. Every page has a complete layout.
+8. Responsive design is intentional.
+9. Animations are smooth and understated.
+10. All visible functional controls behave correctly.
+11. Forms validate input and communicate actual submission results.
+12. Firebase-backed data persists when Firebase is enabled.
+13. Administrative operations are properly protected.
+14. No broken routes, missing components, or failed imports.
+15. No fake checkout or payment success.
+16. No horizontal overflow on mobile.
+17. Loading, empty, and error states are handled.
+18. The project compiles successfully.
+19. Code is clean, typed, modular, and maintainable.
+20. The website feels like a premium industrial brand, not a generic AI-generated template.
+
+### Final execution instruction
+
+Start creating the actual application now.
+
+Use the attached reference image as the highest-priority visual reference.
+
+First establish the design system, header, hero, and homepage layout.
+
+Then implement the remaining pages and functionality according to the specification.
+
+Generate real working components and code, not just mockups, descriptions, or pseudocode.
+
+Use the available full-stack runtime and integrate Firebase through Google AI Studio's supported setup workflow when prompted.
+
+Do not replace the requested design with another creative direction.
+
+Prioritize visual fidelity, functional completeness, usability, maintainability, and production-oriented engineering throughout the implementation.
